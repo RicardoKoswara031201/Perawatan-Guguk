@@ -100,7 +100,7 @@ public class Client extends People implements InterfacePelayanan{
     
     public void clienBaru(Client pt){
         ControllerClient c = new ControllerClient();
-        boolean statusInsert = c.insertNewclient(pt);
+        boolean statusInsert = c.insertNewClient(pt);
         
         if(statusInsert == true){
             JOptionPane.showMessageDialog(null, "data berhasil dimasukkan ke database");
