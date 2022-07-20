@@ -23,11 +23,10 @@ public class MenuStaff implements ActionListener{
     JPanel menu = new JPanel();
     JPanel isi = new JPanel();
     
-    JButton menuClient = new JButton("Client");
-    JButton menuStaff = new JButton("Staff");
+    JButton menuClient = new JButton("CLIENT");
+    JButton menuStaff = new JButton("STAFF");
     JButton menuAdmin = new JButton("ADMINISTRASI");
     JButton insertDokter = new JButton("INSERT Staff");
-    JButton updateDokter = new JButton("UPDATE Staff");
     JButton deleteDokter = new JButton("DELETE Staff");
     JLabel homePertama;
     
@@ -66,16 +65,13 @@ public class MenuStaff implements ActionListener{
         
         homePertama.setBounds(465, 20, 750, 100);
         insertDokter.setBounds(475,100,200,50);
-        updateDokter.setBounds(475,180,200,50);
-        deleteDokter.setBounds(475,260,200,50);
+        deleteDokter.setBounds(475,180,200,50);
         
         isi.add(homePertama);
         isi.add(insertDokter);
-        isi.add(updateDokter);
         isi.add(deleteDokter);
 
         insertDokter.addActionListener(this);
-        updateDokter.addActionListener(this);
         deleteDokter.addActionListener(this);
 
         frame.add(isi);
@@ -105,15 +101,11 @@ public class MenuStaff implements ActionListener{
                 frame.setVisible(false);
                 break;
             case "INSERT STAFF":
-                new InputDokter();
-                frame.setVisible(false);
-                break;
-            case "UPDATE STAFF":
-                new PreUpdateDokter();
+                new InputStaff();
                 frame.setVisible(false);
                 break;
             case "DELETE STAFF":
-                new DeleteDokter();
+                new DeleteStaff();
                 frame.setVisible(false);
                 break;
             default: 
