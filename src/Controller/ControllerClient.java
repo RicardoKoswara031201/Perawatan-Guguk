@@ -82,5 +82,28 @@ public class ControllerClient {
     }
     
     // INSERT
-    
+    public static boolean insertNewPasien(Client client) {
+        conn.connect();
+        String query = "INSERT INTO Client VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement stmt = conn.con.prepareStatement(query);
+            stmt.setString(1, client.getNIK());
+            stmt.setString(2, client.getNama());
+            stmt.setObject(3, client.getTglLahir());
+            stmt.setString(4, client.getGender());
+            stmt.setString(5, client.getAlamat());
+            stmt.setString(6, client.getTelepon());
+            stmt.setObject(7, String.valueOf(client.getVIP()));
+            stmt.setString(8, client.getNamapeliharaan());
+            stmt.setString(9, client.getJenispeliharaan());
+            stmt.setString(10, client.getGenderpeliharaan());
+            stmt.setString(11, client.getKeluhan());
+            stmt.setString(12, Singleton.getInstance().getAdmin().getIdCabang());
+            stmt.executeUpdate();
+            return (true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return (false);
+        }
+    }
 }
