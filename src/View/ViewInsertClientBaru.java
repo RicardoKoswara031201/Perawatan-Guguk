@@ -134,33 +134,31 @@ public class ViewInsertClientBaru implements InterfacePelayanan{
         panelWithScroll.add(namapettext,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 4, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(jenispet,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 1, 5, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
+        CVP.setGBC(gbc, 0.5, 0.5, 2, 4, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(jenispettext,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 2, 5, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
+        CVP.setGBC(gbc, 0.5, 0.5, 1, 5, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(keluhan,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 3, 5, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
+        CVP.setGBC(gbc, 0.5, 0.5, 2, 5, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(keluhantext,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 6, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(golonganLabel,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 7, GridBagConstraints.LINE_START);
         panelWithScroll.add(VIPRadioButton,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 1, 8, GridBagConstraints.LINE_START);
+        CVP.setGBC(gbc, 0.5, 0.5, 2, 7, GridBagConstraints.LINE_START);
         panelWithScroll.add(nonVIPRadioButton,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 2, 8, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
+        CVP.setGBC(gbc, 0.5, 0.5, 1, 8, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(tglLahirLabel,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 9, GridBagConstraints.PAGE_START);
         panelWithScroll.add(tglLahir,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 2, 9, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
+        CVP.setGBC(gbc, 0.5, 0.5, 1, 10, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(alamatLabel,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 1, 10, GridBagConstraints.PAGE_START);
+        CVP.setGBC(gbc, 0.5, 0.5, 2, 10, GridBagConstraints.PAGE_START);
         panelWithScroll.add(alamatTextField,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 1, 11, GridBagConstraints.PAGE_START);
-        panelWithScroll.add(alamatTextField,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 2, 11, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
+        CVP.setGBC(gbc, 0.5, 0.5, 1, 11, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(noKontakLabel,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 1, 12, GridBagConstraints.PAGE_START);
+        CVP.setGBC(gbc, 0.5, 0.5, 2, 11, GridBagConstraints.PAGE_START);
         panelWithScroll.add(noKontakTextField,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 2, 12, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
+        CVP.setGBC(gbc, 0.5, 0.5, 1, 12, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(genderLabel,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 13, GridBagConstraints.LINE_START);
         panelWithScroll.add(wanitaRadioButton,gbc);
@@ -168,9 +166,9 @@ public class ViewInsertClientBaru implements InterfacePelayanan{
         panelWithScroll.add(priaRadioButton,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 14, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(genderpet,gbc);
-        CVP.setGBC(gbc, 0.5, 0.5, 2, 14, GridBagConstraints.LINE_START);
-        panelWithScroll.add(betinaRadioButton,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 15, GridBagConstraints.LINE_START);
+        panelWithScroll.add(betinaRadioButton,gbc);
+        CVP.setGBC(gbc, 0.5, 0.5, 2, 15, GridBagConstraints.LINE_START);
         panelWithScroll.add(jantanRadioButton,gbc);
         CVP.setGBC(gbc, 0.5, 0.5, 1, 16, GridBagConstraints.FIRST_LINE_START,GridBagConstraints.HORIZONTAL);
         panelWithScroll.add(insertNewPatient,gbc);
@@ -185,6 +183,7 @@ public class ViewInsertClientBaru implements InterfacePelayanan{
         
         
         insertNewPatient.addActionListener(new ActionListener() {
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 Client pt = new Client();
