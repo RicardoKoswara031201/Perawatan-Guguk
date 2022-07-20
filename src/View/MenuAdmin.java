@@ -44,8 +44,8 @@ public class MenuAdmin implements ActionListener{
         menu.setBounds(10,520,1170,50);
         isi.setBounds(10,10,1170,500);
         
-        isi.setBackground(Color.BLUE);
-        menu.setBackground(Color.BLUE);
+        isi.setBackground(Color.GREEN);
+        menu.setBackground(Color.GREEN);
         
         menuPasien.setBounds(250,10,90,30);
         menuDokter.setBounds(430,10,90,30);
@@ -96,11 +96,11 @@ public class MenuAdmin implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         String command = ae.getActionCommand();
         switch(command) {
-            case "Client": 
+            case "CLIENT": 
                 new MenuClient();
                 frame.setVisible(false);
                 break;
-            case "Staff":
+            case "STAFF":
                 new MenuStaff();
                 frame.setVisible(false);
                 break;
@@ -112,19 +112,11 @@ public class MenuAdmin implements ActionListener{
                 new InputObat();
                 frame.setVisible(false);
                 break;
-            case "RESTOCK OBAT":
-                new ReStockObat();
-                frame.setVisible(false);
-                break;
             case "LOG OUT"    :
                 Singleton.getInstance().setAdmin(null);
                 Singleton.getInstance().setCabang(null);
                 frame.setVisible(false);;
                 new LoginScreen();
-                break;
-            case "TRANSAKSI":
-                new MenuTransaksi();
-                frame.setVisible(false);
                 break;
             default: 
                 break;
