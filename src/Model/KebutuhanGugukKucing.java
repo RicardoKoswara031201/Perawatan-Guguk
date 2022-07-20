@@ -18,7 +18,11 @@ public class KebutuhanGugukKucing {
     private int hargaJual;
     private String tgl_beli;
     private String tgl_kadaluarsa;
-
+    
+    public KebutuhanGugukKucing(){
+        
+    }
+    
     public KebutuhanGugukKucing(String IDObat, String IDMasaLakuObat, String Nama, int hargaBeli, int Stok, int hargaJual, String tgl_beli, String tgl_kadaluarsa) {
         this.IDObat = IDObat;
         this.IDMasaLakuObat = IDMasaLakuObat;
