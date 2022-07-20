@@ -84,7 +84,7 @@ public class ControllerClient {
     // INSERT
     public static boolean insertNewClient(Client client) {
         conn.connect();
-        String query = "INSERT INTO Client VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO Client VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement stmt = conn.con.prepareStatement(query);
             stmt.setString(1, client.getNIK());
