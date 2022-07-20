@@ -19,22 +19,20 @@ import javax.swing.JRootPane;
  * @author Asus
  */
 public class MenuClient implements ActionListener{
-    JFrame frame = new JFrame("MENU Client");
+    JFrame frame = new JFrame("MENU ClIENT");
     JPanel menu = new JPanel();
     JPanel isi = new JPanel();
     
-    JButton menuClient = new JButton("Client");
-    JButton menuStaff = new JButton("Staff");
+    JButton menuClient = new JButton("CLIENT");
+    JButton menuStaff = new JButton("STAFF");
     JButton menuAdmin = new JButton("ADMINISTRASI");
-    JButton insertClientBaru, searchClient, beliObat, tambahRiwayatPeliharaan, lihatRiwayatPeliharaan;
+    JButton insertClientBaru, searchClient, lihatRiwayatPeliharaan;
     JLabel homePertama;
     
     public MenuClient(){
 
-        insertClientBaru = new JButton("INSERT Client BARU");
+        insertClientBaru = new JButton("INSERT CLIENT BARU");
         searchClient = new JButton("CARI Client");
-        beliObat = new JButton("BELI OBAT");
-        tambahRiwayatPeliharaan = new JButton("UPDATE RIWAYAT PELIHARAAN CLIENT");
         lihatRiwayatPeliharaan = new JButton("LIHAT RIWAYAT PELIHARAAN CLIENT");
         
         frame.setSize(1200, 620);
@@ -62,7 +60,7 @@ public class MenuClient implements ActionListener{
         menuClient.addActionListener(this);
         menuAdmin.addActionListener(this);
         
-        String homesPertama = "MENU Client";
+        String homesPertama = "MENU CLIENT";
         
         homePertama = new JLabel(homesPertama);
         
@@ -71,18 +69,15 @@ public class MenuClient implements ActionListener{
         homePertama.setBounds(465, 20, 750, 100);
         insertClientBaru.setBounds(475, 100, 200, 50);
         searchClient.setBounds(475, 180, 200, 50);
-        tambahRiwayatPeliharaan.setBounds(475, 260, 200, 50);
-        lihatRiwayatPeliharaan.setBounds(475, 340, 200, 50);
+        lihatRiwayatPeliharaan.setBounds(475, 260, 200, 50);
         
         isi.add(homePertama);
         isi.add(insertClientBaru);
         isi.add(searchClient);
-        isi.add(tambahRiwayatPeliharaan);
         isi.add(lihatRiwayatPeliharaan);
         
         insertClientBaru.addActionListener(this);
         searchClient.addActionListener(this);
-        tambahRiwayatPeliharaan.addActionListener(this);
         lihatRiwayatPeliharaan.addActionListener(this);
         
         frame.add(isi);
@@ -99,11 +94,11 @@ public class MenuClient implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         String command = ae.getActionCommand();
         switch(command) {
-            case "Client": 
+            case "CLIENT": 
                 new MenuClient();
                 frame.setVisible(false);
                 break;
-            case "Staff":
+            case "STAFF":
                 new MenuStaff();
                 frame.setVisible(false);
                 break;
@@ -114,12 +109,8 @@ public class MenuClient implements ActionListener{
             case "INSERT CLIENT BARU":
                 new ViewInsertClientBaru();
                 break;
-            case "CARI PASIEN":
-                new ViewSearchPasien();
-                frame.setVisible(false);
-                break;
-            case "UPDATE RIWAYAT PELIHARAAN CLIENT":
-                new viewTambahRiwayatPeliharaan();
+            case "CARI Client":
+                new ViewSearchClient();
                 frame.setVisible(false);
                 break;
             case "LIHAT RIWAYAT PELIHARAAN CLIENT":
