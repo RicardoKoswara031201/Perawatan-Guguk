@@ -24,7 +24,7 @@ public class ControllerRiwayatPeliharaan {
         
     }
     
-    public static ArrayList<RiwayatPeliharaan> getAllRiwayatPeliharaan() {
+    public static ArrayList<RiwayatPeliharaan> getAllRiwayatPeliharaans() {
         ArrayList<RiwayatPeliharaan> RPs = new ArrayList<>();
         conn.connect();
         String query = "SELECT * FROM riwayat_peliharaan";
@@ -157,10 +157,31 @@ public class ControllerRiwayatPeliharaan {
         }
     }
     
-    public static ArrayList<String> getResepObat1Peliharaan(String NIK){
-        ArrayList<String> resepObat = new ArrayList<>();
+    public static ArrayList<String> getResepObatPeliharaan(){
+        ArrayList<String> kebutuhan = new ArrayList<>();
         conn.connect();
-        String query = "SELECT a.Nama_obat "
+        String query = "SELECT a.Nama_kebutuhan "
+                + "FROM kebutuhan a,Resep_peliharaan b,riwayat_peliharaan c "
+                + "WHERE a.ID_kebutuhan = b.ID_kebutuhan "
+                + "AND b.NIK = c.NIK ";
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                String RO = new String();
+                RO = rs.getString("Nama_kebutuhan");
+                kebutuhan.add(RO);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return kebutuhan;
+    }
+    
+    public static ArrayList<String> getResepObat1Peliharaan(String NIK){
+        ArrayList<String> kebutuhan = new ArrayList<>();
+        conn.connect();
+        String query = "SELECT a.Nama_kebutuhan "
                 + "FROM kebutuhan a,Resep_Kebutuhan b,riwayat_peliharaan c,client d "
                 + "WHERE a.ID_Kebutuhan = b.ID_Kebutuhan "
                 + "AND b.NIK = c.NIK "
@@ -172,18 +193,18 @@ public class ControllerRiwayatPeliharaan {
             while (rs.next()) {
                 String RO = new String();
                 RO = rs.getString("Nama_kebutuhan");
-                resepObat.add(RO);
+                kebutuhan.add(RO);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return resepObat;
+        return kebutuhan;
     }
     
     //paramnya id obat sama NIK pasien
     public static boolean insertNewResepObat(String NIK,String IdObat){
         conn.connect();
-        String query = "INSERT INTO Riwayat_Pelharaan VALUES(?,?)";
+        String query = "INSERT INTO Riwayat_Peliharan VALUES(?,?)";
         try {
             PreparedStatement stmt = conn.con.prepareStatement(query);
             stmt.executeUpdate();
