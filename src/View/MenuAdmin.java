@@ -28,8 +28,6 @@ public class MenuAdmin implements ActionListener{
     JButton menuAdmin = new JButton("ADMINISTRASI");
     JButton logout = new JButton("LOG OUT");
     JButton inputObat = new JButton("INPUT OBAT");
-    JButton restockObat = new JButton("RESTOCK OBAT");
-    JButton transaksi = new JButton("TRANSAKSI");
     JLabel homePertama;
     
     public MenuAdmin(){
@@ -70,17 +68,11 @@ public class MenuAdmin implements ActionListener{
         
         homePertama.setBounds(420, 20, 750, 100);
         inputObat.setBounds(475,120,200,50);
-        restockObat.setBounds(475,220,200,50);
-        transaksi.setBounds(475,320,200,50);
         
         isi.add(homePertama);
         isi.add(inputObat);
-        isi.add(restockObat);
-        isi.add(transaksi);
         
         inputObat.addActionListener(this);
-        restockObat.addActionListener(this);
-        transaksi.addActionListener(this);
         
         frame.add(isi);
         frame.add(menu);
