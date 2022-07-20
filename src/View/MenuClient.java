@@ -111,8 +111,8 @@ public class MenuClient implements ActionListener{
                 new MenuAdmin();
                 frame.setVisible(false);
                 break;
-            case "INSERT PASIEN BARU":
-                new ViewInsertPasienBaru();
+            case "INSERT CLIENT BARU":
+                new ViewInsertClientBaru();
                 break;
             case "CARI PASIEN":
                 new ViewSearchPasien();
