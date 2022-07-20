@@ -106,4 +106,20 @@ public class ControllerClient {
             return (false);
         }
     }
+    
+    // UPDATE
+    public static boolean updatePasien(String Golongan,String Alamat,String Telepon,String NIK) {
+        conn.connect();
+        String query = "UPDATE Client SET Alamat='" + Alamat+ "', "
+                + "No_telepon='" + Telepon+ "' "
+                + " WHERE NIK='" + NIK+ "'";
+        try {
+            Statement stmt = conn.con.createStatement();
+            stmt.executeUpdate(query);
+            return (true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return (false);
+        }
+    }
 }
