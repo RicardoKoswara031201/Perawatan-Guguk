@@ -90,7 +90,7 @@ public class Transaksi implements InterfacePelayanan{
         this.client = client;
     }
 
-    public boolean isIsBayar() {
+    public boolean getIsBayar() {
         return isBayar;
     }
 
