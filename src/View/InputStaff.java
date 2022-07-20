@@ -178,7 +178,7 @@ public class InputStaff implements ActionListener{
                 String stralamat = textAlamat.getText();
                 
                 Date lahir = (Date)datePicker.getModel().getValue();
-                Staff staff = new Staff(strpoli, strnama, strnik, lahir, strgender, stralamat, strnotelp);
+                Staff staff = new Staff(strnik, strnama, lahir, strgender, strpoli, stralamat, strnotelp);
                 boolean input = control.addStaff(staff);
                 if(input == true){
                     inputDokter.setVisible(false);
