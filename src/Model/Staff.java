@@ -14,7 +14,15 @@ import java.util.Date;
 public class Staff extends People{
     private String Keahlian;
     
-    public Staff(String Keahlian, String NIK, String Nama, Date tglLahir, String gender, String Alamat, String Telepon){   
+    public Staff(){
+        
+    }
+    
+    public Staff(String Keahlian) {
+        this.Keahlian = Keahlian;
+    }
+    
+    public Staff(String NIK, String Nama, Date tglLahir, String gender, String Keahlian, String Alamat, String Telepon){   
         super(NIK,Nama,tglLahir,gender,Alamat,Telepon);
         this.Keahlian = Keahlian;
     }
