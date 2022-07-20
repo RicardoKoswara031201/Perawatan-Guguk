@@ -43,7 +43,7 @@ public class ControllerStaff {
         return staffs;
     }
     
-    public static Staff getDokter(String nik){
+    public static Staff getStaff(String nik){
         conn.connect();
         Staff staff = new Staff();
         String query = "SELECT * FROM staff WHERE NIK='" + nik + "'";
@@ -86,9 +86,9 @@ public class ControllerStaff {
         }
     }
     
-    public static boolean updateDokter(Staff staff, String tgllahir){
+    public static boolean updateStaff(Staff staff, String tgllahir){
         conn.connect();
-        String query = "UPDATE dokter SET nik='" + staff.getNIK() + "', "
+        String query = "UPDATE staff SET nik='" + staff.getNIK() + "', "
                 + "nama='" + staff.getNama() + "', "
                 + "Tgl_Lahir='" + tgllahir + "', "
                 + "Gender='" + staff.getGender() + "', "
@@ -107,7 +107,7 @@ public class ControllerStaff {
         }
     }
     
-    public static boolean deleteDokter(String strnid){
+    public static boolean deletestaff(String strnid){
         conn.connect();
 
         String query = "DELETE FROM staff WHERE nik='" + strnid + "'";
