@@ -82,7 +82,7 @@ public class ControllerClient {
     }
     
     // INSERT
-    public static boolean insertNewPasien(Client client) {
+    public static boolean insertNewClient(Client client) {
         conn.connect();
         String query = "INSERT INTO Client VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         try {
